@@ -123,7 +123,10 @@ class QiemanCraw(object):
         get sign for api anti-spam
         :return:
         """
-        with webdriver.Chrome(desired_capabilities=self.caps) as browser:
+        options = webdriver.ChromeOptions()
+        options.add_argument('--no-sandbox')
+        options.add_argument('--headless')
+        with webdriver.Chrome(options=options, desired_capabilities=self.caps) as browser:
             url = conf.get('qieman', 'url_sign_mock')
             if not url:
                 raise Exception("sign_mock_url is none...")

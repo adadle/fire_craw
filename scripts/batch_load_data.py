@@ -12,5 +12,5 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardi
 from qieman.craw_assert import QiemanCraw
 
 if __name__ == '__main__':
-    pass
-    #m = QiemanCraw()
+    m = QiemanCraw()
+    print(m.get_latest_sign())
