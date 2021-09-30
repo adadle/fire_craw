@@ -46,4 +46,4 @@ class DailyProfit(object):
             .on_duplicate_key_update(data_date=self.data_date, channel=self.channel)
         result = session.execute(stmt)
         session.commit()
-        logging.info("save DailyProfit success, rows %i", result.rowcount)
+        logging.info("save DailyProfit success, rows %i, date %s", result.rowcount, self.data_date)
